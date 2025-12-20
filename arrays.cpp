@@ -16,6 +16,7 @@ void smallest_in_array(int nums[]){
     return;
 }
 
+
 void largest_in_array(int nums[]){
     int largest = INT32_MIN;
     int size = 6;
@@ -31,12 +32,23 @@ void largest_in_array(int nums[]){
 }
 
 
-// Pass by refrence[ will reflect in main function]
+// Pass by refrence/ passes original address[will reflect in main function]
+// array variable --> stores address of memory
 void change_array(int arr[], int size){
     for (int i=0; i<size; i++){
         arr[i] = 2* arr[i];
     }
 
+}
+
+
+int linear_search(int arr[], int size, int target){
+    for (int i=0; i<size; i++){
+        if (arr[i] == target){
+            return i;
+        }
+    }
+    return -1;
 }
 
 
@@ -48,14 +60,14 @@ int main(){
 
     double price[5] = {100, 110, 120, 130, 140};
 
-    for (int i=0; i<5; i++){
-        cin>>marks[i];
-    }
+    // for (int i=0; i<5; i++){
+    //     cin>>marks[i];
+    // }
     
     // Array indexing
-    for (int i=0; i<5; i++){
-        cout<< "The array's are: "<< marks[i] <<endl;
-    }
+    // for (int i=0; i<5; i++){
+    //     cout<< "The array's are: "<< marks[i] <<endl;
+    // }
 
     int nums[] = {5, 15, 22, 1, -15, 24};
     smallest_in_array(nums);
@@ -69,6 +81,9 @@ int main(){
         cout<< arr[i] <<" ";
     }
     cout<< endl;
+
+    cout<<"The index value  of target is: "<<linear_search(nums, 6, 1);
+
 
 
     return 0;
