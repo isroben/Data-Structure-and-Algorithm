@@ -83,6 +83,7 @@ int main(){
     cout<< endl;
 
     cout<<"The index value  of target is: "<<linear_search(nums, 6, 1);
+    cout<<"\nThe index value  of target is: "<<linear_search(nums, 6, 90);
 
 
 
