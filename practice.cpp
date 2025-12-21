@@ -65,4 +65,19 @@ void triangle_pattern(){
 
 int main(){
     triangle_pattern();
+
+    cout<<endl;
+
+    int n = 145;
+    int remainder;
+    int reversed = 0;
+
+    for(int i=0; i<3; i++){
+        remainder = n%10;
+        n /= 10;
+        reversed = (reversed * 10) + remainder;
+    }
+    cout<<reversed;
+
+    return 0;
 }

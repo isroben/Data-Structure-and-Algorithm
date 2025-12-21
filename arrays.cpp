@@ -51,6 +51,23 @@ int linear_search(int arr[], int size, int target){
     return -1;
 }
 
+void reverse_array(){   // Two pointer approach
+    int arr[] = {4, 2, 7, 8, 1, 2, 5};
+    int start = 0, end=6;
+
+    while(start < end){
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+
+    for(int i=0; i<7; i++){
+        cout<<arr[i];
+    }
+
+    return;
+}
+
 
 
 int main(){
@@ -84,6 +101,8 @@ int main(){
 
     cout<<"The index value  of target is: "<<linear_search(nums, 6, 1);
     cout<<"\nThe index value  of target is: "<<linear_search(nums, 6, 90);
+
+    reverse_array();
 
 
 
