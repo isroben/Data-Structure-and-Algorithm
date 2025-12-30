@@ -64,6 +64,22 @@ void reverse_array(){   // Two pointer approach
     for(int i=0; i<7; i++){
         cout<<arr[i];
     }
+    cout<<endl;
+
+    return;
+}
+
+// WAF to calculate sum and product of all numbers in array.
+void sum_product(){
+    int marks[5] = {2, 4, 6, 8, 10};
+
+    int sum = 0, product = 1;
+    for(int i=0; i<5; i++){
+        sum += marks[i];
+        product *= marks[i];
+    }
+    cout<<"The Sum of terms of array is: "<<sum<<endl;
+    cout<<"The Product of terms of array is: "<<product<<endl;
 
     return;
 }
@@ -103,6 +119,8 @@ int main(){
     cout<<"\nThe index value  of target is: "<<linear_search(nums, 6, 90);
 
     reverse_array();
+
+    sum_product();
 
 
 

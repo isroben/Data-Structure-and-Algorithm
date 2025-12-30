@@ -54,7 +54,7 @@ int main(){
 
 
 
-    // Casting [explicit]
+    // Casting [explicit]x
     // Big --> Small
     int new_price = prices;
     cout<< new_price <<endl;
