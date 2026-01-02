@@ -8,7 +8,7 @@ Given an array of integers nums and an integer target, return indices of the two
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 */
 
-// Brute force Approach
+// Brute force Approach O(n^2)
 vector<int> twoSum(vector<int>& nums, int target) {
     int size = nums.size();
     for(int st=0; st<size; st++){
