@@ -17,10 +17,19 @@ int factorial(int n){
     return n * factorial(n-1);
 }
 
+int sum(int n){
+    if(n == 1){
+        return 1;
+    }
+    return n + sum(n-1);
+}
+
 int main(){
     printNums(5);
 
     cout<<factorial(5)<<endl;
+
+    cout<<sum(5)<<endl;
 
     return 0;
 }
