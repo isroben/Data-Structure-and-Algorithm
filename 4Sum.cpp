@@ -33,3 +33,18 @@ vector<vector<int>> fourSum(vector<int> &nums, int tar){
     }
     return ans;
 }
+
+int main(){
+    vector<int> nums = {-2, -1, -1, 1, 1, 2, 2};
+    int tar = 0;
+
+    vector<vector<int>> ans = fourSum(nums, tar);
+
+    for(int i=0; i<ans.size(); i++){
+        for(int j=0; j<ans[0].size(); j++){
+            cout<<ans[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
