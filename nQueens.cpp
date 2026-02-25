@@ -1,8 +1,10 @@
 #include<iostream>
 #include<bits/stdc++.h>
+#include<vector>
+#include<string>
 using namespace std;
 
-bool isSafe(vector<vector<string>> &board, int row, int col, int j, int n){
+bool isSafe(vector<string> &board, int row, int col, int n){
     for(int j=0; j<n; j++){
         if(board[row][j] == 'Q') return false;
     }
@@ -22,9 +24,9 @@ bool isSafe(vector<vector<string>> &board, int row, int col, int j, int n){
 }
 
 
-void nQueens(vector<vector<string>> &board, int row, int n, vector<vector<int>> ans){
+void nQueens(vector<string> &board, int row, int n, vector<vector<string>> ans){
     if(row==n){
-        ans.push_back(board);
+        ans.push_back({board});
         return;
     }
 
@@ -35,9 +37,22 @@ void nQueens(vector<vector<string>> &board, int row, int n, vector<vector<int>> 
             board[row][j] = '.';
         }
     }
+
+    for(int i=0; i<n; i++){
+        for(int j=0; i<n; j++){
+            cout<<ans[i][j];
+        }
+        cout<<endl;
+    }
 }
 
 int main(){
+    int n = 4;
+    vector<string> board(n, string(n, '.'));
+    vector<vector<string>> ans;
+
+    nQueens(board, 0, n, ans);
+
 
 
     return 0;
