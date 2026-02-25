@@ -27,6 +27,12 @@ bool isSafe(vector<string> &board, int row, int col, int n){
 void nQueens(vector<string> &board, int row, int n, vector<vector<string>> ans){
     if(row==n){
         ans.push_back({board});
+        for(int i=0; i<n; i++){
+            for(int j=0; i<n; j++){
+                cout<<ans[i][j];
+                cout<<endl;
+            }
+        }
         return;
     }
 
@@ -36,13 +42,6 @@ void nQueens(vector<string> &board, int row, int n, vector<vector<string>> ans){
             nQueens(board, row+1, n, ans);
             board[row][j] = '.';
         }
-    }
-
-    for(int i=0; i<n; i++){
-        for(int j=0; i<n; j++){
-            cout<<ans[i][j];
-        }
-        cout<<endl;
     }
 }
 
