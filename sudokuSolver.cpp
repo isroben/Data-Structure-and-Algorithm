@@ -12,6 +12,19 @@ bool helper(vector<vector<char>> &board, int row, int col){
         nextRow = row + 1;
         nextCol = 0;
     }
+
+    if(board[row][col] != '.'){
+        return helper(board, nextRow, nextCol);
+    }
+    for(int dig = 1; dig<=9; dig++){
+        if(isSafe(board, row, col, dig)){
+            board[row][col] = dig;
+        }
+        if(helper(board, nextRow, nextCol)){
+            return true;
+        }
+        board[row][col] = '.';
+    }
 }
 
 
