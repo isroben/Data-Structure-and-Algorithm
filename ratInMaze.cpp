@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include<bits/stdc++.h>
 using namespace std;
 
 void helper(vector<vector<int>> &mat, int r, int c, string path, vector<string> &ans){
