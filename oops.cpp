@@ -36,9 +36,10 @@ int main(){
     t1.name = "Roben";
     t1.subject = "Mathematics";
     t1.dept = "Computer Science";
-    t1.salary = 57000;
+    t1.setSalary(57000);
 
     cout << t1.name<<endl;
+    cout << t1.getSalary()<<endl;
 
     return 0;
 }
