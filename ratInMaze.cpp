@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<bits/stdc++.h>
 using namespace std;
 
 void helper(vector<vector<int>> &mat, int r, int c, string path, vector<string> &ans){
@@ -13,12 +14,13 @@ void helper(vector<vector<int>> &mat, int r, int c, string path, vector<string> 
         return;
     }
 
-    mat[r][c] == -1;
+    mat[r][c] = -1;
     
     helper(mat, r+1, c, path+"D", ans); // down
     helper(mat, r-1, c, path+"U", ans); // up
     helper(mat, r, c+1, path+"R", ans); // right
     helper(mat, r, c-1, path+"L", ans); // left
+
     mat[r][c] = 1;
 }
 
@@ -35,6 +37,7 @@ int main(){
     vector<vector<int>> mat = {{1,0,0,0}, {1,1,0,1}, {1,1,0,0}, {0,1,1,1}};
 
     vector<string> ans = findPath(mat);
+
     for(string val: ans){
         cout<<val<<endl;
     }
