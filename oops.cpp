@@ -7,6 +7,10 @@ private:
     double salary;
 
 public:
+    Teacher(){  //Constructor
+        cout<<"Hi, I am constructor\n";
+    }
+
     string name;
     string dept;
     string subject;
@@ -30,9 +34,20 @@ class Student {
     int age;
 };
 
+class Account {
+private:    // data hiding
+    double blance;
+    string password;
+
+public:
+    string acountId;
+    string username;
+
+};
+
 int main(){
 
-    Teacher t1;
+    Teacher t1;  //constructor call
     t1.name = "Roben";
     t1.subject = "Mathematics";
     t1.dept = "Computer Science";
