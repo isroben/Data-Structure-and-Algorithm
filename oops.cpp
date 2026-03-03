@@ -7,17 +7,10 @@ private:
     double salary;
 
 public:
-    // Teacher(){  // Non-parameterized or default Constructor;
-    //     cout<<"Hi, I am constructor\n";
-    // }
-
-    Teacher(string n, string d, string s, double sal){ // Parameterized constructor;
-        name = n;
-        dept = d;
-        subject = s;
-        salary = sal;
-
+    Teacher(){  // Non-parameterized or default Constructor;
+        cout<<"Hi, I am constructor\n";
     }
+
 
     string name;
     string dept;
@@ -33,6 +26,12 @@ public:
     // getter --> gets the values of private values
     double getSalary(){
         return salary;
+    }
+
+    void getInfo(){
+        cout << name<<endl;
+        cout << subject<<endl;
+        cout << getSalary()<<endl;
     }
 };
 
@@ -55,18 +54,11 @@ public:
 
 int main(){
     // For Non-parameterized Constructors;
-    // Teacher t1;  //constructor call
-    // t1.name = "Roben";
-    // t1.subject = "Mathematics";
-    // t1.dept = "Computer Science";
-    // t1.setSalary(57000);
-
-    // For Parameterized Constructor;
-    Teacher t1("Shyam", "Mathematics", "Linear Algebra", 57000);
-
-    cout << t1.name<<endl;
-    cout << t1.subject<<endl;
-    cout << t1.getSalary()<<endl;
+    Teacher t1;  //constructor call
+    t1.name = "Roben";
+    t1.subject = "Mathematics";
+    t1.dept = "Computer Science";
+    t1.setSalary(57000);
 
     return 0;
 }
