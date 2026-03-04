@@ -22,6 +22,14 @@ public:
 
     }
 
+    Teacher(Teacher &orgObj){ // Pass by reference
+        cout <<"I am custom copy constructor\n";
+        this->name = orgObj.name;
+        this->dept = orgObj.dept;
+        this->subject = orgObj.subject;
+        this->salary = orgObj.salary;
+    }
+
     void getInfo(){
         cout << name<<endl;
         cout << subject<<endl;
@@ -43,6 +51,9 @@ int main(){
     Teacher t1("Krish", "Mathematics", "Linear Algebra", 57000); // Value Initialization for Parameterized Constructor;
     cout<< "Parameterized Constructor"<<endl;
     t1.getInfo();
+
+    Teacher t2(t1);
+    t2.getInfo();
 
     return 0;
 }
