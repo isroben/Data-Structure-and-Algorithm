@@ -37,15 +37,36 @@ public:
     }
 };
 
+class Student {
+public:
+    string name;
+    double *cgpaPtr;
+
+    Student(string name, double cgpa){
+        this->name = name;
+        cgpaPtr = new double;
+        *cgpaPtr = cgpa;
+    }
+    Student(Student &obj){ // Dynamic Memory Allocation
+        this->name = obj.name;
+        cgpaPtr = new double;
+        *cgpaPtr = *obj.cgpaPtr;
+    }
+    void getInfo(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"CGPA: "<<*cgpaPtr<<endl;
+    }
+};
+
 
 
 int main(){
     // For Non-parameterized Constructors;
-    Teacher t1;  //constructor call
-    cout<<"Non-Parameterized Constructor"<<endl;
-    t1.name = "Roben";
-    t1.subject = "Mathematics";
-    t1.dept = "Computer Science";
+    // Teacher t1;  //constructor call
+    // cout<<"Non-Parameterized Constructor"<<endl;
+    // t1.name = "Roben";
+    // t1.subject = "Mathematics";
+    // t1.dept = "Computer Science";
 
 
     Teacher t1("Krish", "Mathematics", "Linear Algebra", 57000); // Value Initialization for Parameterized Constructor;
@@ -54,6 +75,15 @@ int main(){
 
     Teacher t2(t1);
     t2.getInfo();
+
+    cout<<"\n";
+
+    Student s1("Roben", 8.9);
+    s1.getInfo();
+
+    Student s2(s1);
+    *s2.cgpaPtr = 9.3;
+    s2.getInfo();
 
     return 0;
 }
