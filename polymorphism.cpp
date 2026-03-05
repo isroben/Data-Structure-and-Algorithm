@@ -32,12 +32,20 @@ public:
     void getInfo(){
         cout << "Parent class\n";
     }
+
+    virtual void hello(){
+        cout << "Hello, from Parent\n";
+    }
 };
 
 class Child : public Parent{
 public:
     void getInfo(){
         cout << "Child class\n";
+    }
+    
+    void hello(){
+        cout << "Hello, from Child\n";
     }
 };
 
@@ -49,7 +57,7 @@ int main(){
     p1.show('H');
 
     Child c1;
-    c1.getInfo();
+    c1.hello();
 
     return 0;
 }
