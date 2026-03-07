@@ -6,7 +6,7 @@ using namespace std;
 class Node {
 public:
     int data;
-    Node* next;
+    Node *next;
 
     Node(int val){
         data = val;
@@ -15,8 +15,8 @@ public:
 };
 
 class List {
-    Node* head;
-    Node* tail;
+    Node *head;
+    Node *tail;
 
 public:
     List(){
@@ -24,7 +24,7 @@ public:
 
     }
     void push_front(int val){
-        Node* newNode = new Node(val); // dynamic
+        Node *newNode = new Node(val); // dynamic
         // Node* newNode(val); // static
 
         if(head == NULL){
@@ -37,7 +37,7 @@ public:
         }
     }
     void push_back(int val){
-        Node* newNode = new Node(val);
+        Node *newNode = new Node(val);
         if(head == NULL){
             head = tail = newNode;
             return;
@@ -47,9 +47,12 @@ public:
             tail = newNode;
         }
     }
+    void pop_front(int val){
+
+    }
 
     void printLL() {
-        Node* temp = head;
+        Node *temp = head;
 
         while(temp != NULL){
             cout<< temp->data << " ";
