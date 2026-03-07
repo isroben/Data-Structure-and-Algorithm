@@ -47,8 +47,17 @@ public:
             tail = newNode;
         }
     }
-    void pop_front(int val){
+    void pop_front(){
+        if(head == NULL) {
+            cout << "LL is empty\n";
+            return;
+        }
 
+        Node *temp = head;
+        head = head->next;
+        temp->next = NULL;
+
+        delete temp;
     }
 
     void printLL() {
@@ -72,6 +81,11 @@ int main(){
         ll.push_back(0);
         ll.push_back(9);
         ll.push_back(8);
+
+
+        ll.printLL();
+
+        ll.pop_front();
 
         ll.printLL();
     return 0;
