@@ -81,11 +81,28 @@ public:
         }
         Node *temp = head;
         for(int i=0; i<pos-1; i++){
+            if(temp == NULL){
+                cout <<"Invalid position\n";
+                return;
+            }
             temp = temp->next;
         }
         Node *newNode = new Node(val);
         newNode->next = temp->next;
         temp->next = newNode;
+    }
+    int search(int key) {
+        Node *temp = head;
+        int idx = 0;
+
+        while(temp != NULL){
+            if(temp->data == key){
+                return idx;
+            }
+            temp = temp->next;
+            idx++;
+        }
+        return -1;
     }
 
     void printLL() {
@@ -121,6 +138,8 @@ int main(){
 
         ll.insert(6, 1);
         ll.printLL();
+        
+        cout<< ll.search(1);
 
     return 0;
 }
