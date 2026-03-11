@@ -45,7 +45,7 @@ public:
             tail = newNode;
         }
     }
-    ListNode* gethead(){
+    ListNode* getHead(){
         return head;
     }
 };
@@ -60,7 +60,7 @@ int main(){
     ll.push_back(4);
     ll.push_back(5);
 
-    cout<< middleNode(ll.gethead())->data<<endl;
+    cout<< middleNode(ll.getHead())->data<<endl;
     
     return 0;
 }
