@@ -33,7 +33,7 @@ public:
         head = tail = NULL;
     }
 
-    void pop_front(int val){
+    void push_front(int val){
         ListNode* newNode = new ListNode(val);
 
         if(head == NULL){
@@ -54,11 +54,11 @@ public:
 int main(){
     List ll;
     
-    ll.pop_front(1);
-    ll.pop_front(2);
-    ll.pop_front(3);
-    ll.pop_front(4);
-    ll.pop_front(5);
+    ll.push_front(1);
+    ll.push_front(2);
+    ll.push_front(3);
+    ll.push_front(4);
+    ll.push_front(5);
 
     cout<< middleNode(ll.gethead())->data<<endl;
     
