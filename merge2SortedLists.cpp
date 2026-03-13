@@ -4,7 +4,7 @@ using namespace std;
 
 ListNode* mergeTwoLists(ListNode* h1, ListNode* h2) {
     if(h1 == NULL || h2 == NULL){
-        return head1 == NULL ? head2 : head1;
+        return h1 == NULL ? h2 : h1;
     }
 
     if(h1->val <= h2->val){
