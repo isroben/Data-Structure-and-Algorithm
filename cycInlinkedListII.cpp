@@ -52,16 +52,18 @@ ListNode* detectCycle(ListNode* head){
 			break;
 		}
 	}
-	
+
 	if(!isCycle){
 		return NULL;
 	}
 
 	slow = head;
+	ListNode* prev = NULL;
 	while(slow != fast){
 		slow = slow->next;
 		fast = fast->next;
 	}
+	prev->next = NULL;
 	return slow;
 };
 
