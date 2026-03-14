@@ -1,0 +1,50 @@
+#include<iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+
+Node* copyRandomList(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+    
+    unordered_map<Node*, Node*> map;
+    Node* newHead = new Node(head->val);
+
+    Node* oldTemp = head->next;
+    Node* newTemp = newHead;
+
+    map[head] = newHead;
+
+    while(oldTemp != NULL){
+        Node* copyNode = new Node(oldTemp->val);
+        map[oldTemp] = copyNode;
+
+        newTemp->next = copyNode;
+        oldTemp = oldTemp->next;
+        newTemp = newTemp->next;
+    }
+
+    oldTemp = head; newTemp = newHead;
+
+    while(oldTemp != NULL){
+        newTemp->random = map[oldTemp->random];
+        oldTemp = oldTemp->next;
+        newTemp = newTemp->next;
+    }
+    return newHead;
+
+}
