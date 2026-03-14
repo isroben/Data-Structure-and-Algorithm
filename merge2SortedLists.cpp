@@ -2,6 +2,17 @@
 
 using namespace std;
 
+class ListNode {
+public:
+    int val;
+    ListNode* next;
+    
+    ListNode(int _val) {
+        val = _val;
+        next = NULL;
+    }
+};
+
 ListNode* mergeTwoLists(ListNode* h1, ListNode* h2) {
     if(h1 == NULL || h2 == NULL){
         return h1 == NULL ? h2 : h1;
