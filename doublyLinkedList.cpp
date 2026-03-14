@@ -46,6 +46,32 @@ public:
             tail = newNode;
         }
     }
+    void pop_front(){
+        Node* temp = head;
+        head = head->next;
+
+        if(head != NULL){
+            head->prev = NULL;
+        }
+        temp->next = NULL;
+        delete temp;
+    }
+    void pop_back(){
+        if(head == NULL){
+            cout<< "List is empty" <<endl;
+            return;
+        }
+        Node* temp = tail;
+        tail = tail->prev;
+
+        if(tail != NULL){
+            tail->next = NULL;
+        }
+        temp->prev = NULL;
+        delete temp;
+        
+        return;
+    }
 
     void print(){
         Node* temp = head;
@@ -54,6 +80,7 @@ public:
             cout<< temp->data <<endl;
             temp = temp->next;
         }
+        return;
     }
 };
 
@@ -64,11 +91,13 @@ int main(){
     ll.push_front(5);
     ll.push_front(8);
 
-    ll.print();
+    // ll.print();
 
     ll.push_back(9);
     ll.push_back(3);
     ll.push_back(1);
+    ll.pop_front();
+    ll.pop_back();
 
 
     ll.print();
