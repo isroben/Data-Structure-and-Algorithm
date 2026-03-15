@@ -47,15 +47,38 @@ public:
         }
     }
     void deleteHead(){
-        Node* temp = head;
-
         if(head == NULL){
             return;
         }
+        else if(head == tail){
+            delete head;
+        }
         else{
+            Node* temp = head;
             head = head->next;
             tail->next = head;
-            
+
+            temp->next = NULL;
+            delete temp;
+        }
+    }
+    void deleteTail(){
+        if(head == NULL){
+            return;
+        }
+        else if(head == tail){
+            delete tail;
+        }
+        else{
+            Node* temp = tail;
+            Node* prev = head;
+
+            while(prev->next != tail){
+                prev = prev->next;
+            }
+            tail = prev;
+            tail->next = head;
+
             temp->next = NULL;
             delete temp;
         }
@@ -90,6 +113,9 @@ int main(){
     ll.print();
 
     ll.deleteHead();
+    ll.print();
+
+    ll.deleteTail();
     ll.print();
 
 
