@@ -33,6 +33,33 @@ public:
             tail->next = newNode;
         }
     }
+    void insertTail(int val){
+        Node* newNode = new Node(val);
+        
+        if(head == NULL){
+            head = tail = NULL;
+            tail->next = head;
+        }
+        else{
+            tail->next = newNode;
+            newNode->next = head;
+            tail = newNode;
+        }
+    }
+    void deleteHead(){
+        Node* temp = head;
+
+        if(head == NULL){
+            return;
+        }
+        else{
+            head = head->next;
+            tail->next = head;
+            
+            temp->next = NULL;
+            delete temp;
+        }
+    }
     void print(){
         if(tail == NULL){
             return;
@@ -56,5 +83,15 @@ int main(){
     ll.insertHead(9);
 
     ll.print();
+    
+    ll.insertTail(2);
+    ll.insertTail(5);
+    ll.insertTail(7);
+    ll.print();
+
+    ll.deleteHead();
+    ll.print();
+
+
     return 0;
 }
