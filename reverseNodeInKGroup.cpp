@@ -45,4 +45,12 @@ int main(){
         temp = temp->next;
     }
 
+    ListNode* ans = reverseKGroup(head, 2);
+
+    while(ans != NULL){
+        cout<< ans->val <<" -> ";
+        ans = ans->next;
+    }
+
+    return 0;
 }
