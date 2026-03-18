@@ -26,7 +26,7 @@ void quickSort(std::vector<int> &arr, int st, int end){
 }
 
 int main(){
-    std::vector<int> arr = {18, 12, 14, 8, 5, 25, 31, 24, 27};
+    std::vector<int> arr = {12, 1, 14, 7, 2, 10, 4, 7, 22, 6, 15};
     quickSort(arr, 0, arr.size()-1);
 
     for(int val: arr){
