@@ -9,6 +9,8 @@ struct ListNode{
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+ListNode* swapPairs(ListNode* head) {}
+
 int main(){
 
     return 0;
