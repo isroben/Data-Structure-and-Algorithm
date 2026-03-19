@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 struct ListNode{
@@ -31,6 +32,22 @@ ListNode* swapPairs(ListNode* head) {
 }
 
 int main(){
+    vector<int> arr = {1, 2, 3, 4, 5};
+
+    ListNode* head = new ListNode(arr[0]);
+    ListNode* temp = head;
+
+    for(int i=1; i<arr.size(); i++){
+        temp->next = new ListNode(arr[i]);
+        temp = temp->next;
+    }
+
+    ListNode* ans = swapPairs(head);
+
+    while(ans != NULL){
+        cout<< ans->val <<" -> ";
+        ans = ans->next;
+    }
 
     return 0;
 }
