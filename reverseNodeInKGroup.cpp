@@ -19,6 +19,7 @@ ListNode* reverseKGroup(ListNode* head, int k){
         if(temp == NULL) return head;
         temp = temp->next;
         count++;
+        cout <<count <<endl;
     }
 
     ListNode* nextNode = reverseKGroup(temp, k);
