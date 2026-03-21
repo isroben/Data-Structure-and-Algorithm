@@ -2,12 +2,12 @@
 #include<vector>
 using namespace std;
 
-void merge(vector<int> &arr, int st, int end, int mid){ //O(n)
+void merge(vector<int> &arr, int st, int mid, int end){ //O(n)
     vector<int> temp;
     int i = st, j = mid + 1;
 
     while(i <= mid && j <= end){
-        if(arr[i] <= arr[j]){
+        if(arr[i] <= arr[j]){ // For desc ">="
             temp.push_back(arr[i]);
             i++;
         }
@@ -24,7 +24,7 @@ void merge(vector<int> &arr, int st, int end, int mid){ //O(n)
         temp.push_back(arr[j]);
         j++;
     }
-    for(int idx=0; idx < temp.size(); idx++){
+    for(int idx=0; idx<temp.size(); idx++){
         arr[idx+st] = temp[idx];
     }
 }
@@ -49,6 +49,6 @@ int main(){
         cout<< val <<" ";
     }
     cout<<endl;
-    
+
     return 0;
 }
