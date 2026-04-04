@@ -8,7 +8,7 @@ int main(){
 
     int row1 = 4, row2 = 3, column1 = 3, column2 = 2;
 
-    if(column1 = row2){
+    if(column1 == row2){
         for(int i=0; i<row1; i++){
             for(int j=0; j<column2; j++){
                 for(int k=0; k<column1; k++){
