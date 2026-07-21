@@ -10,7 +10,7 @@ public:
     Node* right;
 
     Node(int val){
-        data = val;
+        this->data = val;
         left = right = NULL;
     }
 };
