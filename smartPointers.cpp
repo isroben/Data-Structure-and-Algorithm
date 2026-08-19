@@ -16,10 +16,29 @@ void function(){
     cout<< *p2 <<endl;
 }
 
+// Behaviours of smart pointers
+class Entity{
+public:
+    Entity(){
+        std::cout<< "Created Entity" <<std::endl;
+    }
+    ~Entity(){
+        std::cout<< "Destroyed Entity" <<endl; 
+    }
+};
+
 
 int main(){
 
     function();
+
+    {
+        // std::unique_ptr<Entity> entity(new Entity());
+
+        std::unique_ptr<Entity> entity = std::make_unique<Entity>();
+    }
+
+    std::cin.get();
 
     return 0;
 }
