@@ -40,3 +40,5 @@ a.exe
 
 # debug information files
 *.dwo
+
+.vscode/
