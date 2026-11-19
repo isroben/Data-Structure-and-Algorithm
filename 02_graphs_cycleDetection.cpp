@@ -1,6 +1,8 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <queue>
+#include <utility>
 
 
 class Graph{
@@ -18,13 +20,14 @@ public:
         l[v].push_back(u);
     }
 
-    bool helperCycle(int src, std::vector<bool>& vis, int par){
+    // Using DFS
+    bool helperCycleDfs(int src, std::vector<bool>& vis, int par){
         vis[src] = true;
         // std::cout << src << " ";
 
         for(int v : l[src]){
             if(!vis[v]){
-                if(helperCycle(v, vis, src)) return true;
+                if(helperCycleDfs(v, vis, src)) return true;
             }
             else{
                 if(v != par) return true;
@@ -36,12 +39,49 @@ public:
     void cycleInGraph(int src){
         std::vector<bool> vis(V, false);
 
-        if(helperCycle(src, vis, -1)){
+        if(helperCycleDfs(src, vis, -1)){
             std::cout << "Cycle Exist in Graph.\n";
         }
         else{
             std::cout << "Cycle doesn't exist in Graph.\n";
         }
+    }
+
+    // Using BFS
+    bool helperCycleBfs(int src, std::vector<bool>& vis, int par){
+        std::queue<std::pair<int, int>> Q;
+        Q.push({src, -1});
+        vis[src] = true;
+
+        while(Q.size() > 0){
+            int u = Q.front().first;
+            par = Q.front().second;
+            std::cout << u << " ";
+            Q.pop();
+
+            for(int v : l[u]){
+                if(!vis[v]){
+                    Q.push({v, u});
+                    vis[v] = true;
+                }
+                else if(v != par){
+                    return true;
+                }
+            }
+            
+        }
+        return false;
+    }
+    void CycleInGraphBfs(int src){
+        std::vector<bool> vis(V, false);
+
+        if(helperCycleBfs(src, vis, -1)){
+            std::cout << "Cycle exist in Graph." << std::endl;
+        }
+        else{
+            std::cout << "Cycle doesn't exist in Graph." << std::endl;
+        }
+
     }
 };
 
@@ -57,7 +97,8 @@ int main() {
     g.addEdge(2, 5);
     g.addEdge(3, 4);
 
-    g.cycleInGraph(6);
+    // g.cycleInGraph(6);
+    g.CycleInGraphBfs(6);
 
     return 0;
 }
