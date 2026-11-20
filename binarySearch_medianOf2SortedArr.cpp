@@ -8,7 +8,8 @@ double medianOf2SortedArray(std::vector<int>& arr1, std::vector<int>& arr2) {
     int m = arr1.size();
     int n = arr2.size();
 
-    // Always perform binary search on the smaller array
+    // Base cases
+    if (m == 0 && n == 0) return -1.0;
     if (m > n) {
         return medianOf2SortedArray(arr2, arr1);
     }
